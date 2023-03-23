@@ -36,6 +36,9 @@ cc_binary(
         "@lyra//lyra:lyra_encoder",
         "@lyra//lyra:lyra_decoder",
     ],
+    copts = [
+        "--no-entry", # main() 関数なしのwasmを生成
+    ],
     linkopts = [
       "--bind",
       "-s INITIAL_MEMORY=64MB",
